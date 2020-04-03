@@ -1,0 +1,22 @@
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+<input id = "search" type ="text" value = "what">
+<div class = "searchable">what the going</div>
+
+<script>
+var term = $('#search').val().trim().toLowerCase();
+if (term.length > 0) {
+    var source = $('.searchable').text();
+    var words = source.split(' ');
+    var output = '';
+    $.each(words, function(idx, word) {
+        if (term === word.toLowerCase()) {
+            output += '<span class="highlight">' + word + '</span> ';
+        } else {
+             output += word + ' ';
+        }
+    });
+
+    $('.searchable').html(output);
+}
+</script>

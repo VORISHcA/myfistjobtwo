@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+
+<body>
+<h1>Оставьте отзыв о докторе:</h1>
+
+<h1>{{ info_doctor.first_name }} {{ info_doctor.two_name }}</h1>
+<form action="" method="POST">
+{% csrf_token %}
+<div class='more'>
+<textarea cols="60" rows="8" name="content">
+</textarea>
+</div>
+<input type="submit" value="Отправить отзыв" pattern="(.){100}"/>
+</form>
+</body>
+
+</html>

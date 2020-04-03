@@ -1,0 +1,16 @@
+li a {
+    color: green;
+}
+
+body {
+    background: white url("images/whiteblock.jpg") no-repeat right bottom;
+}
+
+.info_block{
+    padding: 20px;
+    background: beige;
+}
+
+.highlight{
+             color:red;
+}
