@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 # from django.template import RequestContext,loader
 from django.urls import reverse
 
-from .models import News, Topics, SectionsNews, SectionsTopic, Champions, User, Group, Items, Runes, Ability, BadWords, NoBadWords
+from .models import News, Topics, SectionNews, SectionTopic, Champions, User, Group, Items, Runes, Ability, BadWords, NoBadWords
 from django.shortcuts import render, get_object_or_404, redirect
 from django.shortcuts import render_to_response
 from django.http import Http404
