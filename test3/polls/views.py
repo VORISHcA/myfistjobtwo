@@ -103,7 +103,7 @@ def create_new_edit_text(string):
 
     symbol = ['!', '?', '.', ',', ':']
     j = 0
-    if re.search(r'[A-Z–ê-–Ø]{6}', string):
+    if re.search(r'[A-Z¿-ﬂ]{6}', string):
         string = string.lower()
         for i in range(len(string) - 1):
             if string[i].isupper and string[i + 1].isupper:
@@ -137,7 +137,7 @@ def create_new_edit_text(string):
     create_string = ''
     for i in range(len(new_string)):
         local_new_string = new_string[i].lower()
-        local_new_string = re.sub('[^–∞-—è]', '', local_new_string)
+        local_new_string = re.sub('[^‡-ˇ]', '', local_new_string)
         if not local_new_string in mas_all_no_bad:
             for j in range(len(mas_all_bad)):
                 if mas_all_bad[j] in local_new_string:
