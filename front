@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Верстка</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-menu">
+        <div class="header-menu-center">
+            <a href="index.php">Переход1</a>
+            <a href="labs.php">Переход2</a>
+            <a href="blog.php">Переход3</a>
+            <a href="#">Переход4</a>
+        </div>
+    </div>
+</header>
+
+<script>
+
+    
+</script>
+
+<link rel="stylesheet" href="style_labs.css">
+	<main>
+   <div class="category-bar">
+       <button class = "showlab1">Категория1</button>
+       <button class = "showlab2">Категория2</button>
+       <button class = "showlab3">Категория3</button>
+       <button class = "showlab4">Категория4</button>
+   </div>
+
+        <div class="menutop">
+   <p>Возможно заголовок</p>
+         </div>
+            <div class="cardsServices">
+                    <div class = "title_cards">
+                       Тут заголовок
+                   </div>
+                <div class = "cards">
+                    <div class="card-text">
+                        <p> Тут новость </p>
+                    </div>
+                    <div class="card-image">
+                        <a href="labs/calendar.html"><img src="imagenews.jpg" width="640" height="320"></a>
+                    </div>
+                </div>
+                   <div class = "title_cards">
+                       Тут заголовок
+                   </div>
+                <div class = "cards">
+                    <div class="card-text">
+                    </div>
+                    <div class="card-image">
+                        <a href="labs/calendar.html"><img src="imagenews.jpg" width="640" height="320"></a>
+                    </div>
+                </div>
+                
+                <div class = "title_cards">
+                       Тут заголовок
+                   </div>
+                <div class = "cards">
+                    <div class="card-text">
+                        <p> Тут новость</p>
+                    </div>
+                    <div class="card-image">
+                        <a href="labs/calendar.html"><img src="imagenews.jpg" width="640" height="320"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardsServices">
+               <div class = "title_cards">
+                       Тут заголовок
+                   </div>
+                <div class = "cards">
+                    <div class="card-text">
+                        <p>  </p>
+                    </div>
+                    <div class="card-image">
+                        <a href="labs/calendar.html"><img src="imagenews.jpg" width="640" height="320"></a>
+                    </div>
+                </div>
+                
+                <div class = "title_cards">
+                       Тут заголовок
+                   </div>
+                <div class = "cards">
+                    <div class="card-text">
+                        <p> </p>
+                    </div>
+                    <div class="card-image">
+                        <a href="labs/calendar.html"><img src="imagenews.jpg" width="640" height="320"></a>
+                    </div>
+                </div>
+
+            </div>
+            <footer>
+    <div id="footer">
+        <div class="footer-col"><span></span>
+            <span>© 2019 , Inc.</span>
+        </div>
+
+        <div class="social-bar-wrap">
+            <img src="icons/email-icon.png" alt = "Email">
+            <img src="icons/twitter-icon.svg" alt = "Twitter">
+            <img src="icons/youtube-icon.svg" alt = "Youtube">
+        </div>
+
+        <div class="navigation-bar-wrap">
+            <div><li title = "Блог разработки" href = "" > РАЗРАБОТКА</li></div>
+            <div><li title = "Блог разработки" href = "" > РАЗРАБОТКА</li></div>
+            <div><li title = "Блог разработки" href = "" > РАЗРАБОТКА</li></div>
+            <div><li title = "Блог разработки" href = "" > РАЗРАБОТКА</li></div>
+        </div>
+    </div>
+</footer>s
+
+	</main>
+    </body>
+
+</html>
+
+
