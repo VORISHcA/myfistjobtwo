@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
+#from django.utils.encoding import python_2_unicode_compatible
 from django.utils import timezone
 import datetime
 from django.contrib.auth.models import User, Group
@@ -9,8 +9,8 @@ class SectionNews(models.Model):
     section_news_name = models.CharField(max_length=100, verbose_name='Название раздела новостей')
 
     class Meta:
-        verbose_name = 'Раздел'
-        verbose_name_plural = 'Разделы'
+        verbose_name = 'Раздел Новости'
+        verbose_name_plural = 'Разделы Новости'
 
     def __str__(self):
         return self.section_news_name
@@ -20,8 +20,8 @@ class SectionTopic(models.Model):
     section_topic_name = models.CharField(max_length=100, verbose_name='Название раздела тем')
 
     class Meta:
-        verbose_name = 'Специальность'
-        verbose_name_plural = 'Специальности'
+        verbose_name = 'Раздел Темы'
+        verbose_name_plural = 'Разделы Тем'
 
     def __str__(self):
         return self.section_topic_name
@@ -100,8 +100,8 @@ class News(models.Model):
     news_name = models.CharField(max_length=100, verbose_name='Название новости')
     news_section = models.ForeignKey(SectionNews, default="",  on_delete=models.CASCADE, verbose_name='Раздел')
     pub_date = models.DateTimeField('date published')
-    review_text = models.CharField(max_length=1000, verbose_name='Исходный текст')
-    edit_review_text = models.CharField(max_length=1000, verbose_name='Отредактированный текст')
+    news_text = models.CharField(max_length=1000, verbose_name='Исходный текст')
+    edit_news_text = models.CharField(max_length=1000, verbose_name='Отредактированный текст')
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, verbose_name='Пользователь')
     ip_user = models.CharField(max_length=100, blank=True, verbose_name='ip address')
 
@@ -117,9 +117,9 @@ class Topics(models.Model):
     topic_name = models.CharField(max_length=100, verbose_name='Название Темы')
     topic_section = models.ForeignKey(SectionTopic, default="",  on_delete=models.CASCADE, verbose_name='Раздел')
     pub_date = models.DateTimeField('date published')
-    review_text = models.CharField(max_length=1000, verbose_name='Исходный текст')
-    edit_review_text = models.CharField(max_length=1000, verbose_name='Отредактированный текст')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, verbose_name='Пользователь')
+    topic_text = models.CharField(max_length=1000, verbose_name='Исходный текст')
+    edit_topic_text = models.CharField(max_length=1000, verbose_name='Отредактированный текст')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True, verbose_name='Пользователь')
     ip_user = models.CharField(max_length=100, blank=True, verbose_name='ip address')
 
     class Meta:
@@ -128,6 +128,15 @@ class Topics(models.Model):
 
     def __str__(self):
         return '%s %s' % (self.topic_section.section_topic_name, self.user.username)
+
+
+class Comments(models.Model):
+    comment_text = models.CharField(max_length=10000, verbose_name='Текст комментария')
+    comment_for_topic = models.ForeignKey(Topics, on_delete=models.CASCADE, blank=True, verbose_name='Тема')
+
+    class Meta:
+        verbose_name = 'Комментарий'
+        verbose_name_plural = 'Комментарии'
 
 
 class BadWords(models.Model):

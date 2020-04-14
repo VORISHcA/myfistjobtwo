@@ -4,7 +4,7 @@ from django.conf import settings
 
 app_name = 'polls'
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    #url(r'^$', views.index, name='index'),
     url(r'^(?P<pk>[0-9]+)/create_topic/$', views.create_topic, name='create_topic'),
     url(r'^(?P<pk>[0-9]+)/create_news/$', views.create_news, name='create_news'),
     url(r'^news/', views.check_news, name='check_news'),

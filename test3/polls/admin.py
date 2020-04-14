@@ -1,16 +1,24 @@
 from django.contrib import admin
 
-from .models import Topics, News, SectionsTopic, SectionsNews, BadWords, NoBadWords
+from .models import Topics, News, SectionTopic, SectionNews, BadWords, NoBadWords, Items, Runes, Champions, Ability
 
 
-
-
+admin.site.register(Topics)
+admin.site.register(News)
+admin.site.register(SectionNews)
+admin.site.register(SectionTopic)
+admin.site.register(BadWords)
+admin.site.register(NoBadWords)
+admin.site.register(Items)
+admin.site.register(Runes)
+admin.site.register(Champions)
+admin.site.register(Ability)
 
 '''
 class SpecialityInline(admin.TabularInline):
     model = Speciality
     extra = 3
-'''
+
 
 class DoctorAdmin(admin.ModelAdmin):
     #fieldsets = [
@@ -23,11 +31,11 @@ class DoctorAdmin(admin.ModelAdmin):
 
 admin.site.register(Doctor, DoctorAdmin)
 
-'''
+
 class SpecialityAdmin(admin.ModelAdmin):
     list_display =('specialty_name')
     list_filter = ['specialty_name']
-'''
+
 
 admin.site.register(Speciality)
 
@@ -55,3 +63,5 @@ class ReviewAdmin(admin.ModelAdmin):
 
 admin.site.register(Review, ReviewAdmin)
 
+
+'''

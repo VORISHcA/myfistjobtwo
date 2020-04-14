@@ -5,7 +5,7 @@ from django.urls import reverse
 
 from .models import News, Topics, SectionNews, SectionTopic, Champions, User, Group, Items, Runes, Ability, BadWords, NoBadWords
 from django.shortcuts import render, get_object_or_404, redirect
-from django.shortcuts import render_to_response
+#from django.shortcuts import render_to_response
 from django.http import Http404
 from django.views import generic
 from django.utils import timezone
@@ -81,7 +81,7 @@ def create_news(request, pk):
                 post.news_text = request.POST.get('content')
                 post.user = request.user
                 post.news_id = pk
-                post.edit_topic_text = create_new_edit_text(post.news_text)
+                post.edit_news_text = create_new_edit_text(post.news_text)
                 post.save()
                 # return render(request, 'polls/add-topic.html')
                 return render(request, 'polls/successfully_news.html', context)
@@ -103,7 +103,7 @@ def create_new_edit_text(string):
 
     symbol = ['!', '?', '.', ',', ':']
     j = 0
-    if re.search(r'[A-Z¿-ﬂ]{6}', string):
+    if re.search(r'[A-Z–ê-–Ø]{6}', string):
         string = string.lower()
         for i in range(len(string) - 1):
             if string[i].isupper and string[i + 1].isupper:
@@ -137,7 +137,7 @@ def create_new_edit_text(string):
     create_string = ''
     for i in range(len(new_string)):
         local_new_string = new_string[i].lower()
-        local_new_string = re.sub('[^‡-ˇ]', '', local_new_string)
+        local_new_string = re.sub('[^–∞-—è]', '', local_new_string)
         if not local_new_string in mas_all_no_bad:
             for j in range(len(mas_all_bad)):
                 if mas_all_bad[j] in local_new_string:
