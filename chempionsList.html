@@ -4,9 +4,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Items</title>
+    <title>Champion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>    
 </head>
 <body>
 <header>
@@ -14,7 +14,7 @@
         <div class="header-menu-center">
             <a href="blog.html">News</a>
             <a href="itemList.html">Items</a>
-            <a href="chempion.html">Chempions</a>
+            <a href="chempionsList.html">Chempions</a>
         </div>
     </div>
 </header>
@@ -24,13 +24,12 @@
   <div class="grid-container">
    {% for i in latestChempion }}
     <div class="location-listing">
-      <a class="location-title" href="#">    {{i.item_name}}                    </a>
+      <a class="location-title" href=/Chempion?name={{i.chempion_name}}> {{i.item_name}} </a>
       <div class="location-image">
         <a href="#">
             <img width="300" height="169" src="{{i.chempion_image}}" alt="image">  
         </a>
                                                 
-
       </div>
         <div class="chempion-name">    {{i.champion_name}}     </div>
     </div>
