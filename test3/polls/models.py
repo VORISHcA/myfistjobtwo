@@ -72,8 +72,8 @@ class Ability(models.Model):
 
 class Champions(models.Model):
     champion_name = models.CharField(max_length=100, verbose_name='Название Чемпиона')
-    rune_description = models.CharField(max_length=10000, verbose_name='Описание Чемпиона')
-    rune_image = models.CharField(max_length=200, verbose_name='Изображение Чемпиона')
+    champion_description = models.CharField(max_length=10000, verbose_name='Описание Чемпиона')
+    champion_image = models.CharField(max_length=200, verbose_name='Изображение Чемпиона')
     champion_hp = models.CharField(max_length=100, verbose_name='Здоровье')
     champion_mp = models.CharField(max_length=100, verbose_name='Мана')
     champion_speed = models.CharField(max_length=100, verbose_name='Скорость')
